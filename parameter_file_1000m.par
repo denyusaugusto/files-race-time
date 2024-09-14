@@ -1,0 +1,48 @@
+DATAFILE
+race_time_1000.txt
+TRAITS
+9
+FIELDS_PASSED_OUTPUT
+
+WEIGHT(S)
+
+RESIDUAL_VARIANCE
+1.0
+EFFECT
+2 cross alpha #year
+EFFECT
+3 cross alpha #sex
+EFFECT
+4 cross alpha #raceclass
+EFFECT
+5 cross alpha #track
+EFFECT
+6 cov #age
+EFFECT
+7 cov #animalweight
+EFFECT
+8 cov #agequad
+EFFECT
+1 cross alpha #animal
+RANDOM
+animal
+FILE
+pedigree.txt
+PED_DEPTH #numberofgenerations
+4
+(CO)VARIANCES
+1.0
+EFFECT
+1 cross alpha #animal
+RANDOM
+diagonal
+(CO)VARIANCES
+1.0
+OPTION method VCE
+OPTION sol_se
+OPTION origID
+OPTION use_yams
+OPTION se_covar_function h2 (G_8_8_1_1)/(G_8_8_1_1+G_9_9_1_1+R_1_1)
+OPTION se_covar_function t (G_8_8_1_1+G_9_9_1_1)/(G_8_8_1_1+G_9_9_1_1+R_1_1)
+OPTION samples_se_covar_function 10000
+OPTION out_se_covar_function
